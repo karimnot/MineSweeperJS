@@ -25,25 +25,6 @@ class MineSweeper {
 
 };
 
-MineSweeper.prototype.inicialize = function(x, y, minas){
-	this.dimX = x;
-	this.dimY = y;
-	this.minas = minas;
-	this.status = 'INICIADO';
-	this.tablero = new Array(x);
-
-	for (var i = 0; i < x; i++) {
-		this.tablero[i] = new Array(y);
-	}	
-
-	for (var i = 0; i < x; i++) {
-		for (var j = 0; j < y; j++) {
-		this.tablero[i][j] = new Celda();
-		}
-	}
-
-	this.colocarMina();
-}
 
 MineSweeper.prototype.celdaValida = function(x, y){
 	return ( (x >= 0)&&(x < this.dimX) ) && ( (y >= 0)&&(y < this.dimY) );
@@ -97,6 +78,14 @@ MineSweeper.prototype.colocarMina = function(){
 	}
 }
 
+MineSweeper.prototype.imprimir = function(){
+	for (var i = 0; i < this.dimY; i++) {
+		for (var j = 0; j < this.dimX; j++) {
+			process.stdout.write(this.tablero[j][i].imprimir());
+		}
+		console.log('');	
+	}	
+}
 
 
 module.exports = MineSweeper;

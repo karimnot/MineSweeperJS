@@ -15,13 +15,13 @@ class Celda {
 Celda.prototype.marcarCelda = function(){
 	switch (this.estado) {
 		case 'CERRADO':
-			this.setEstado('BANDERA');
+			this.estado = 'BANDERA';
 			break;
 		case 'BANDERA':
-			this.setEstado('INTERROGACION');
+			this.estado = 'INTERROGACION';
 			break;
 		case 'INTERROGACION':
-			this.setEstado('CERRADO');
+			this.estado = 'CERRADO';
 			break;
 	}
 }
