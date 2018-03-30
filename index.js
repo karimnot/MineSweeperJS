@@ -13,6 +13,7 @@ app.use(bodyParser.json()); // for parsing application/json
 
 consign()
 	.include('api')
+	.then('models')
 	.into(app);
 
 app.listen(PORT, () => console.log(`MineSweeper API - Port ${PORT}`));

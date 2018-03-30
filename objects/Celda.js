@@ -3,10 +3,10 @@
 
 class Celda {
 
-	constructor(){
-		this.estado = 'CERRADO';
-		this.mina = false;
-		this.numero = 0;
+	constructor(estado = 'CERRADO', mina = false, numero = 0){
+		this.estado = estado;
+		this.mina = mina;
+		this.numero = numero;
 	}
 
 };
